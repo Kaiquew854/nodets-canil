@@ -15,13 +15,10 @@ server.engine('mustache', mustache()); //roda função da engine
 
 server.use(Express.static(path.join(__dirname, '../public'))); //diretorio das paginas estáticas
 
-// rotas
 
 //erro 404
 server.use(mainRoutes, (req, res)=>{
-    res.status(404).send('Sorry, page not found');
+    res.render('pages/404');
 })
-
-
 
 server.listen(process.env.PORT);

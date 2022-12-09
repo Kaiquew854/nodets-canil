@@ -1,16 +1,16 @@
 import { Router } from "express";
-import * as PageController from '../controllers/pageController';
-import * as SearchController from '../controllers/searchController';
+import * as PController from '../controllers/PageController';
+import * as SController from '../controllers/SearchController'
 
 const router = Router();
 
-//1° rota home
-router.get('/', PageController.home)
-router.get('/dogs', PageController.dogs)
-router.get('/cats', PageController.cats)
-router.get('/fishes', PageController.fishes)
+//rotas a função de cada rota fica no controller
+router.get('/', PController.home)
+router.get('/dogs', PController.dogs)
+router.get('/cats', PController.cats)
+router.get('/fishes', PController.fishes)
 
-router.get('/search', SearchController.search)
+router.get('/search',SController.search)
 
 export default router;
 
